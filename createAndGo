@@ -1,0 +1,10 @@
+#! /bin/bash 
+
+if [[ -z "$1" ]]; then
+    echo "Directory name is required"
+    return 1;
+fi
+
+mkdir -p "$1" || { echo "failed to create the directory $1"; return 1; }
+
+cd $1 || { echo "failed to move in to directory $1"; return 1; }
